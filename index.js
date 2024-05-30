@@ -2,6 +2,9 @@ var express = require("express");
 var app = express();
 const passport = require("passport");
 var bodyParser = require("body-parser");
+const cors = require("cors");
+
+app.use(cors());
 
 //Router
 const Users = require("./routes/Users");

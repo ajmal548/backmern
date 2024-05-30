@@ -63,12 +63,12 @@ router.get(
 router.put(
   "/:_id",
   updateProduct,
-  passport.authenticate("jwt", { session: false }),
+  // passport.authenticate("jwt", { session: false }),
   async (req, res) => {
-    if (req.user.role !== "vendor") {
-      res.status(403);
-      return res.json({ message: "Access only vendor" });
-    }
+    // if (req.user.role !== "vendor") {
+    //   res.status(403);
+    //   return res.json({ message: "Access only vendor" });
+    // }
     res.send("Updated");
   }
 );

@@ -7,8 +7,8 @@ router.post("/", createCategory, (req, res) => {
     res.json(data);
   });
   
-  router.get("/:_id", async (req, res) => {
-    const data = await model.findOne({ _id: req.params._id });
+  router.get("/", async (req, res) => {
+    const data = await model.find();
     res.send(data);
   });
   

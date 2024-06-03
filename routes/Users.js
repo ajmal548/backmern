@@ -86,44 +86,44 @@ router.post(
   }
 );
 
-router.get(
-  "/admin",
-  passport.authenticate("jwt", { session: false }),
-  (req, res, next) => {
-    if (req.user.role !== "admin") {
-      res.status(403);
-      return res.json({ message: "Access only admin" });
-    }
-    res.json({
-      message: "Welcome, you are the admin",
-      user: req.user,
-    });
-  }
-);
+// router.get(
+//   "/admin",
+//   passport.authenticate("jwt", { session: false }),
+//   (req, res, next) => {
+//     if (req.user.role !== "admin") {
+//       res.status(403);
+//       return res.json({ message: "Access only admin" });
+//     }
+//     res.json({
+//       message: "Welcome, you are the admin",
+//       user: req.user,
+//     });
+//   }
+// );
 
-router.get(
-  "/vendor",
-  passport.authenticate("jwt", { session: false }),
-  (req, res, next) => {
-    if (req.user.role !== "vendor") {
-      res.status(403);
-      return res.json({ message: "you'r not Vendor user" });
-    }
-    res.json({
-      message: "Welcome, you are the vendor",
-      user: req.user,
-    });
-  }
-);
+// router.get(
+//   "/vendor",
+//   passport.authenticate("jwt", { session: false }),
+//   (req, res, next) => {
+//     if (req.user.role !== "vendor") {
+//       res.status(403);
+//       return res.json({ message: "you'r not Vendor user" });
+//     }
+//     res.json({
+//       message: "Welcome, you are the vendor",
+//       user: req.user,
+//     });
+//   }
+// );
 
 router.get(
   "/user",
   passport.authenticate("jwt", { session: false }),
   (req, res, next) => {
-    if (req.user.role !== "user") {
-      res.status(403);
-      return res.json({ message: "Access Forbidden" });
-    }
+    // if (req.user.role !== "user") {
+    //   res.status(403);
+    //   return res.json({ message: "Access Forbidden" });
+    // }
     res.json({
       message: "Welcome, you are a user",
       user: req.user,
